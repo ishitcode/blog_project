@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 	def index
       @users = User.all
+      #@users = current_arctiles.user
     end
 
 	def new
@@ -11,6 +12,7 @@ class UsersController < ApplicationController
 		@user = User.new(user_params)
 		if @user.save
 			redirect_to articles_path
+			#redirect_to users_path
 		else
 			render 'new'
 		end
